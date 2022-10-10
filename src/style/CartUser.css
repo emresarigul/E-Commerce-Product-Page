@@ -1,0 +1,115 @@
+/*colors*/
+.cart-user-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 3rem;
+}
+@media (max-width: 991px) {
+  .cart-user-wrapper {
+    gap: 1rem;
+  }
+}
+.cart-user-wrapper .cart-container {
+  cursor: pointer;
+  position: relative;
+}
+.cart-user-wrapper .cart-container .cart-amount {
+  background-color: hsl(26deg, 100%, 55%);
+  color: hsl(0deg, 0%, 100%);
+  position: absolute;
+  width: 1.3rem;
+  height: 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 11px;
+  border-radius: 10px;
+  top: -7px;
+  right: -5px;
+}
+.cart-user-wrapper .user-container img {
+  border: 2px solid transparent;
+  border-radius: 50%;
+  width: 50px;
+  transition: 0.2s ease-in-out;
+  cursor: pointer;
+}
+@media (max-width: 991px) {
+  .cart-user-wrapper .user-container img {
+    width: 30px;
+  }
+}
+.cart-user-wrapper .user-container img:hover {
+  border: 2px solid hsl(26deg, 100%, 55%);
+}
+.cart-user-wrapper .cart-wrapper {
+  position: absolute;
+  background-color: hsl(0deg, 0%, 100%);
+  border-radius: 10px;
+  right: 15px;
+  top: 110px;
+  width: 350px;
+  height: 211px;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  z-index: 60;
+}
+@media (max-width: 575px) {
+  .cart-user-wrapper .cart-wrapper {
+    right: 0;
+    left: 0;
+    margin: auto;
+  }
+}
+.cart-user-wrapper .cart-wrapper .cart .cart-name {
+  font-weight: 700;
+  border-bottom: 1px solid hsl(220deg, 14%, 75%);
+  padding: 20px 0 10px 20px;
+}
+.cart-user-wrapper .cart-wrapper .cart .cart-product-details {
+  display: flex;
+  padding: 20px;
+  gap: 15px;
+}
+.cart-user-wrapper .cart-wrapper .cart .cart-product-details .image-thumb img {
+  width: 50px;
+  border-radius: 5px;
+}
+.cart-user-wrapper .cart-wrapper .cart .cart-product-details .product-detail-price {
+  position: relative;
+}
+.cart-user-wrapper .cart-wrapper .cart .cart-product-details .product-detail-price .detail {
+  color: hsl(219deg, 9%, 45%);
+}
+.cart-user-wrapper .cart-wrapper .cart .cart-product-details .product-detail-price .price {
+  color: hsl(219deg, 9%, 45%);
+}
+.cart-user-wrapper .cart-wrapper .cart .cart-product-details .product-detail-price .price span {
+  font-weight: 700;
+  color: hsl(0deg, 0%, 0%);
+  margin-left: 5px;
+}
+.cart-user-wrapper .cart-wrapper .cart .cart-product-details .product-detail-price .delete {
+  position: absolute;
+  right: -30px;
+  top: 20px;
+  cursor: pointer;
+}
+.cart-user-wrapper .cart-wrapper .cart .button-wrapper {
+  padding: 0 20px 20px 20px;
+}
+.cart-user-wrapper .cart-wrapper .cart .button-wrapper .cart-btn {
+  width: 100%;
+  color: hsl(0deg, 0%, 100%);
+  font-weight: 700;
+  background-color: hsl(26deg, 100%, 55%);
+  border: none;
+  border-radius: 10px;
+  padding: 15px 0;
+  cursor: pointer;
+}
+.cart-user-wrapper .cart-wrapper .cart .empty-cart-details {
+  text-align: center;
+  margin-top: 60px;
+  font-weight: 700;
+  color: hsl(219deg, 9%, 45%);
+}/*# sourceMappingURL=CartUser.css.map */

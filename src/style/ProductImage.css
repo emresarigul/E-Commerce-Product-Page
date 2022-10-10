@@ -1,0 +1,199 @@
+/*colors*/
+.image-container {
+  flex-basis: 50%;
+}
+.image-container .desktop-images {
+  display: block;
+}
+@media (max-width: 991px) {
+  .image-container .desktop-images {
+    display: none;
+  }
+}
+.image-container .desktop-images .main-image {
+  margin-bottom: 2rem;
+  cursor: pointer;
+}
+.image-container .desktop-images .main-image img {
+  border-radius: 15px;
+}
+.image-container .desktop-images .thumb-images {
+  display: flex;
+  gap: 2rem;
+}
+.image-container .desktop-images .thumb-images .box {
+  cursor: pointer;
+  border: 2px solid transparent;
+}
+.image-container .desktop-images .thumb-images .box img {
+  border-radius: 15px;
+  height: 100%;
+}
+.image-container .desktop-images .thumb-images .box.active {
+  border: 2px solid hsl(26deg, 100%, 55%);
+  border-radius: 18px;
+}
+.image-container .desktop-images .thumb-images .box.active img {
+  opacity: 0.4;
+}
+.image-container .desktop-images .thumb-images .box.not-active:hover {
+  opacity: 0.6;
+}
+.image-container .mobile-images {
+  display: none;
+  position: relative;
+}
+@media (max-width: 991px) {
+  .image-container .mobile-images {
+    display: block;
+  }
+}
+.image-container .mobile-images .prev-btn {
+  position: absolute;
+  background-color: #fff;
+  left: 15px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 2.2rem;
+  height: 2.2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+}
+.image-container .mobile-images .prev-btn img {
+  width: 10px;
+}
+.image-container .mobile-images .next-btn {
+  position: absolute;
+  background-color: #fff;
+  right: 15px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 2.2rem;
+  height: 2.2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+}
+.image-container .mobile-images .next-btn img {
+  width: 10px;
+}
+
+.overlay-image-container {
+  position: absolute;
+  z-index: 51;
+  width: 550px;
+  right: 0;
+  left: 0;
+  top: 0;
+  margin: auto;
+}
+@media (max-width: 991px) {
+  .overlay-image-container {
+    display: none;
+  }
+}
+.overlay-image-container .prev-btn {
+  position: absolute;
+  left: -25px;
+  top: 45%;
+  transform: translateY(-50%);
+  width: 3rem;
+  height: 3rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #fff;
+  border-radius: 50%;
+  cursor: pointer;
+}
+.overlay-image-container .prev-btn .prev-black {
+  display: block;
+}
+.overlay-image-container .prev-btn .prev-orange {
+  display: none;
+}
+.overlay-image-container .prev-btn:hover .prev-black {
+  display: none;
+}
+.overlay-image-container .prev-btn:hover .prev-orange {
+  display: block;
+}
+.overlay-image-container .next-btn {
+  position: absolute;
+  right: -25px;
+  top: 45%;
+  transform: translateY(-50%);
+  width: 3rem;
+  height: 3rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #fff;
+  border-radius: 50%;
+  cursor: pointer;
+}
+.overlay-image-container .next-btn .next-black {
+  display: block;
+}
+.overlay-image-container .next-btn .next-orange {
+  display: none;
+}
+.overlay-image-container .next-btn:hover .next-orange {
+  display: block;
+}
+.overlay-image-container .next-btn:hover .next-black {
+  display: none;
+}
+.overlay-image-container .overlay-close-btn {
+  background-image: url(../images/icon-close.svg);
+  background-repeat: no-repeat;
+  background-size: 20px;
+  background-position: right;
+  height: 20px;
+  cursor: pointer;
+  margin-bottom: 15px;
+}
+.overlay-image-container .overlay-close-btn:hover {
+  background-image: url(../images/icon-close-orange.svg);
+}
+.overlay-image-container .main-overlay-image {
+  margin-bottom: 2rem;
+  cursor: pointer;
+}
+.overlay-image-container .main-overlay-image img {
+  border-radius: 15px;
+}
+.overlay-image-container .thumb-overlay-images {
+  display: flex;
+  gap: 2rem;
+}
+.overlay-image-container .thumb-overlay-images .box-overlay {
+  cursor: pointer;
+  border: 2px solid transparent;
+}
+.overlay-image-container .thumb-overlay-images .box-overlay img {
+  border-radius: 15px;
+  height: 100%;
+}
+.overlay-image-container .thumb-overlay-images .box-overlay.active {
+  border: 2px solid hsl(26deg, 100%, 55%);
+  border-radius: 18px;
+  position: relative;
+}
+.overlay-image-container .thumb-overlay-images .box-overlay.active img {
+  opacity: 1;
+}
+.overlay-image-container .thumb-overlay-images .box-overlay.active::after {
+  content: "";
+  position: absolute;
+  background-color: hsl(0deg, 0%, 100%);
+  height: 100%;
+  width: 100%;
+  right: 0;
+  top: 0;
+  border-radius: 15px;
+  opacity: 0.4;
+}/*# sourceMappingURL=ProductImage.css.map */

@@ -1,0 +1,23 @@
+@import "mixin";
+@import "breakpoints";
+
+.content-container {
+  max-width: 1240px;
+  margin: auto;
+  padding: 0 15px;
+  @include sm {
+    padding: 0;
+  }
+  .content-wrapper {
+    display: flex;
+    align-items: center;
+    padding: 6rem 4rem 0 4rem;
+    gap: 8rem;
+    position: relative;
+    @include lg {
+      flex-direction: column;
+      padding: 0;
+      gap: 2rem;
+    }
+  }
+}

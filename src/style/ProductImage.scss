@@ -1,0 +1,211 @@
+@import "mixin";
+@import "breakpoints";
+
+/*colors*/
+$orange: hsl(26, 100%, 55%);
+$pale-orange: hsl(25, 100%, 94%);
+$dark-grayish-blue: hsl(219, 9%, 45%);
+$very-vark-blue: hsl(220, 13%, 13%);
+$grayish-blue: hsl(220, 14%, 75%);
+$light-grayish-blue: hsl(223, 64%, 98%);
+$white: hsl(0, 0%, 100%);
+$black: hsl(0, 0%, 0%);
+
+.image-container {
+  flex-basis: 50%;
+  .desktop-images {
+    display: block;
+    @include lg {
+      display: none;
+    }
+    .main-image {
+      margin-bottom: 2rem;
+      cursor: pointer;
+      img {
+        border-radius: 15px;
+      }
+    }
+    .thumb-images {
+      display: flex;
+      gap: 2rem;
+      .box {
+        cursor: pointer;
+        border: 2px solid transparent;
+        img {
+          border-radius: 15px;
+          height: 100%;
+        }
+      }
+      .box.active {
+        border: 2px solid $orange;
+        border-radius: 18px;
+        img {
+          opacity: 0.4;
+        }
+      }
+      .box.not-active {
+        &:hover {
+          opacity: 0.6;
+        }
+      }
+    }
+  }
+  .mobile-images {
+    display: none;
+    position: relative;
+    @include lg {
+      display: block;
+    }
+    .prev-btn {
+      position: absolute;
+      background-color: #fff;
+      left: 15px;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 2.2rem;
+      height: 2.2rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 50%;
+      img {
+        width: 10px;
+      }
+    }
+    .next-btn {
+      position: absolute;
+      background-color: #fff;
+      right: 15px;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 2.2rem;
+      height: 2.2rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 50%;
+      img {
+        width: 10px;
+      }
+    }
+  }
+}
+
+.overlay-image-container {
+  position: absolute;
+  z-index: 51;
+  width: 550px;
+  right: 0;
+  left: 0;
+  top: 0;
+  margin: auto;
+  @include lg {
+    display: none;
+  }
+  .prev-btn {
+    position: absolute;
+    left: -25px;
+    top: 45%;
+    transform: translateY(-50%);
+    width: 3rem;
+    height: 3rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #fff;
+    border-radius: 50%;
+    cursor: pointer;
+    .prev-black {
+      display: block;
+    }
+    .prev-orange {
+      display: none;
+    }
+    &:hover {
+      .prev-black {
+        display: none;
+      }
+      .prev-orange {
+        display: block;
+      }
+    }
+  }
+  .next-btn {
+    position: absolute;
+    right: -25px;
+    top: 45%;
+    transform: translateY(-50%);
+    width: 3rem;
+    height: 3rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #fff;
+    border-radius: 50%;
+    cursor: pointer;
+    .next-black {
+      display: block;
+    }
+    .next-orange {
+      display: none;
+    }
+    &:hover {
+      .next-orange {
+        display: block;
+      }
+      .next-black {
+        display: none;
+      }
+    }
+  }
+  .overlay-close-btn {
+    background-image: url(../images/icon-close.svg);
+    background-repeat: no-repeat;
+    background-size: 20px;
+    background-position: right;
+    height: 20px;
+    cursor: pointer;
+    margin-bottom: 15px;
+    &:hover {
+      background-image: url(../images/icon-close-orange.svg);
+    }
+  }
+  .main-overlay-image {
+    margin-bottom: 2rem;
+    cursor: pointer;
+    img {
+      border-radius: 15px;
+    }
+  }
+  .thumb-overlay-images {
+    display: flex;
+    gap: 2rem;
+    .box-overlay {
+      cursor: pointer;
+      border: 2px solid transparent;
+      img {
+        border-radius: 15px;
+        height: 100%;
+      }
+    }
+    .box-overlay.active {
+      border: 2px solid $orange;
+      border-radius: 18px;
+      position: relative;
+      img {
+        opacity: 1;
+      }
+      &::after {
+        content: "";
+        position: absolute;
+        background-color: $white;
+        height: 100%;
+        width: 100%;
+        right: 0;
+        top: 0;
+        border-radius: 15px;
+        opacity: 0.4;
+      }
+    }
+  }
+}

@@ -1,0 +1,127 @@
+@import "mixin";
+@import "breakpoints";
+
+/*colors*/
+$orange: hsl(26, 100%, 55%);
+$pale-orange: hsl(25, 100%, 94%);
+$dark-grayish-blue: hsl(219, 9%, 45%);
+$very-vark-blue: hsl(220, 13%, 13%);
+$grayish-blue: hsl(220, 14%, 75%);
+$light-grayish-blue: hsl(223, 64%, 98%);
+$white: hsl(0, 0%, 100%);
+$black: hsl(0, 0%, 0%);
+
+.cart-user-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 3rem;
+  @include lg {
+    gap: 1rem;
+  }
+  .cart-container {
+    cursor: pointer;
+    position: relative;
+    .cart-amount {
+      background-color: $orange;
+      color: $white;
+      position: absolute;
+      width: 1.3rem;
+      height: 1rem;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 11px;
+      border-radius: 10px;
+      top: -7px;
+      right: -5px;
+    }
+  }
+  .user-container {
+    img {
+      border: 2px solid transparent;
+      border-radius: 50%;
+      width: 50px;
+      transition: 0.2s ease-in-out;
+      cursor: pointer;
+      @include lg {
+        width: 30px;
+      }
+      &:hover {
+        border: 2px solid $orange;
+      }
+    }
+  }
+  .cart-wrapper {
+    position: absolute;
+    background-color: $white;
+    border-radius: 10px;
+    right: 15px;
+    top: 110px;
+    width: 350px;
+    height: 211px;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    z-index: 60;
+    @include sm {
+      right: 0;
+      left: 0;
+      margin: auto;
+    }
+    .cart {
+      .cart-name {
+        font-weight: 700;
+        border-bottom: 1px solid $grayish-blue;
+        padding: 20px 0 10px 20px;
+      }
+      .cart-product-details {
+        display: flex;
+        padding: 20px;
+        gap: 15px;
+        .image-thumb {
+          img {
+            width: 50px;
+            border-radius: 5px;
+          }
+        }
+        .product-detail-price {
+          position: relative;
+          .detail {
+            color: $dark-grayish-blue;
+          }
+          .price {
+            color: $dark-grayish-blue;
+            span {
+              font-weight: 700;
+              color: $black;
+              margin-left: 5px;
+            }
+          }
+          .delete {
+            position: absolute;
+            right: -30px;
+            top: 20px;
+            cursor: pointer;
+          }
+        }
+      }
+      .button-wrapper {
+        padding: 0 20px 20px 20px;
+        .cart-btn {
+          width: 100%;
+          color: $white;
+          font-weight: 700;
+          background-color: $orange;
+          border: none;
+          border-radius: 10px;
+          padding: 15px 0;
+          cursor: pointer;
+        }
+      }
+      .empty-cart-details {
+        text-align: center;
+        margin-top: 60px;
+        font-weight: 700;
+        color: $dark-grayish-blue;
+      }
+    }
+  }
+}
