@@ -84,11 +84,23 @@
 .overlay-image-container {
   position: absolute;
   z-index: 51;
-  width: 550px;
+  max-width: 550px;
   right: 0;
   left: 0;
-  top: 0;
+  top: -60px;
   margin: auto;
+  box-shadow: 0 0 0 5000px rgba(0, 0, 0, 0.75);
+  background-color: rgba(0, 0, 0, 0.75);
+}
+@media (max-width: 1399px) {
+  .overlay-image-container {
+    max-width: 500px;
+  }
+}
+@media (max-width: 1199px) {
+  .overlay-image-container {
+    max-width: 450px;
+  }
 }
 @media (max-width: 991px) {
   .overlay-image-container {

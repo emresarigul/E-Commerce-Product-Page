@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React from "react";
 import "../style/ProductInfo.css";
 import minus from "../images/icon-minus.svg";
 import plus from "../images/icon-plus.svg";

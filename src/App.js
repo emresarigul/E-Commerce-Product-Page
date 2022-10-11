@@ -10,7 +10,6 @@ function App() {
   const [mobileNavOverlay, setMobileNavOverlay] = useState(false);
   return (
     <div className="main-content-wrapper">
-      {overlayColor && <div className="overlay-color"></div>}
       {mobileNavOverlay && <div className="mobile-nav-overlay"></div>}
       <Header
         cartAmount={cartAmount}
