@@ -89,8 +89,8 @@
   left: 0;
   top: -60px;
   margin: auto;
-  box-shadow: 0 0 0 5000px rgba(0, 0, 0, 0.75);
-  background-color: rgba(0, 0, 0, 0.75);
+  /*box-shadow: 0 0 0 5000px rgb(0 0 0 / 75%);
+  background-color: rgb(0 0 0 / 75%);*/
 }
 @media (max-width: 1399px) {
   .overlay-image-container {

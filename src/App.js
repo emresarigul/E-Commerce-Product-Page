@@ -11,6 +11,7 @@ function App() {
   return (
     <div className="main-content-wrapper">
       {mobileNavOverlay && <div className="mobile-nav-overlay"></div>}
+      {overlayColor && <div className="overlay-color"></div>}
       <Header
         cartAmount={cartAmount}
         setCartAmount={setCartAmount}
