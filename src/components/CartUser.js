@@ -1,10 +1,12 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import "../style/CartUser.css";
 import cart from "../images/icon-cart.svg";
 import user from "../images/image-avatar.png";
 import Cart from "./Cart";
-
-const CartUser = ({ cartAmount, setCartAmount }) => {
+import { CartContext } from "../context/CartContext";
+const CartUser = () => {
+  //context
+  const { cartAmount } = useContext(CartContext);
   const [showCart, setShowCart] = useState(false);
 
   const cartHandler = () => {
@@ -20,9 +22,7 @@ const CartUser = ({ cartAmount, setCartAmount }) => {
       <div className="user-container">
         <img src={user} alt="" />
       </div>
-      {showCart && (
-        <Cart cartAmount={cartAmount} setCartAmount={setCartAmount} />
-      )}
+      {showCart && <Cart />}
     </div>
   );
 };

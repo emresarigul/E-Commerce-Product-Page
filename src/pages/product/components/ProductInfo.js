@@ -1,9 +1,12 @@
-import React from "react";
-import "../style/ProductInfo.css";
-import minus from "../images/icon-minus.svg";
-import plus from "../images/icon-plus.svg";
+import React, { useContext, useState } from "react";
+import "../../../style/ProductInfo.css";
+import minus from "../../../images/icon-minus.svg";
+import plus from "../../../images/icon-plus.svg";
+import { CartContext } from "../../../context/CartContext";
 
-const ProductInfo = ({ amount, setAmount, cartAmount, setCartAmount }) => {
+const ProductInfo = () => {
+  const { setCartAmount } = useContext(CartContext);
+  const [amount, setAmount] = useState(0);
   const plusHandler = () => {
     setAmount(amount + 1);
   };

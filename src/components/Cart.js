@@ -1,8 +1,9 @@
-import React from "react";
+import React, { useContext } from "react";
 import thumbImage1 from "../images/image-product-1-thumbnail.jpg";
 import deleteBtn from "../images/icon-delete.svg";
-
-const Cart = ({ cartAmount, setCartAmount }) => {
+import { CartContext } from "../context/CartContext";
+const Cart = () => {
+  const { cartAmount, setCartAmount } = useContext(CartContext);
   const deleteHandler = () => {
     setCartAmount(0);
   };

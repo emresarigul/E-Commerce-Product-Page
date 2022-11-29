@@ -1,14 +1,13 @@
 import React, { useState } from "react";
 import "../style/Content.css";
-import ImageOverlay from "./ImageOverlay";
-import ProductImage from "./ProductImage";
-import ProductInfo from "./ProductInfo";
+import ImageOverlay from "../pages/product/components/ImageOverlay";
+import ProductImage from "../pages/product/components/ProductImage";
+import ProductInfo from "../pages/product";
 
 const Content = ({
   amount,
   setAmount,
-  cartAmount,
-  setCartAmount,
+
   overlayColor,
   setOverlayColor,
 }) => {
@@ -16,18 +15,13 @@ const Content = ({
   return (
     <div className="content-container">
       <div className="content-wrapper">
-        <ProductImage
+        {/* <ProductImage
           imageOverlay={imageOverlay}
           setImageOverlay={setImageOverlay}
           overlayColor={overlayColor}
           setOverlayColor={setOverlayColor}
         />
-        <ProductInfo
-          amount={amount}
-          setAmount={setAmount}
-          cartAmount={cartAmount}
-          setCartAmount={setCartAmount}
-        />
+        <ProductInfo amount={amount} setAmount={setAmount} />
         {imageOverlay && (
           <ImageOverlay
             imageOverlay={imageOverlay}
@@ -35,7 +29,7 @@ const Content = ({
             overlayColor={overlayColor}
             setOverlayColor={setOverlayColor}
           />
-        )}
+        )} */}
       </div>
     </div>
   );

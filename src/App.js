@@ -1,33 +1,31 @@
-import React, { useState } from "react";
-import Content from "./components/Content";
+import React, { useState, useContext } from "react";
 import Header from "./components/Header";
 import "./style/App.css";
+import CartContextProvider from "./context/CartContext";
+import { CartContext } from "./context/CartContext";
+import ProductDetail from "./pages/product";
 
-function App() {
-  const [amount, setAmount] = useState(0);
-  const [cartAmount, setCartAmount] = useState(0);
-  const [overlayColor, setOverlayColor] = useState(false);
+function AppComponent() {
+  const { overlayColor } = useContext(CartContext);
   const [mobileNavOverlay, setMobileNavOverlay] = useState(false);
+
   return (
     <div className="main-content-wrapper">
       {mobileNavOverlay && <div className="mobile-nav-overlay"></div>}
       {overlayColor && <div className="overlay-color"></div>}
       <Header
-        cartAmount={cartAmount}
-        setCartAmount={setCartAmount}
         mobileNavOverlay={mobileNavOverlay}
         setMobileNavOverlay={setMobileNavOverlay}
       />
-      <Content
-        amount={amount}
-        setAmount={setAmount}
-        cartAmount={cartAmount}
-        setCartAmount={setCartAmount}
-        overlayColor={overlayColor}
-        setOverlayColor={setOverlayColor}
-      />
+      {/*product layout*/}
+      <ProductDetail />
     </div>
   );
 }
+const App = () => (
+  <CartContextProvider>
+    <AppComponent />
+  </CartContextProvider>
+);
 
 export default App;

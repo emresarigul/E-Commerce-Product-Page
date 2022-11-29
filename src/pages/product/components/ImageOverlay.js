@@ -1,24 +1,24 @@
-import React, { useState } from "react";
-import "../style/ProductImage.css";
-import image1 from "../images/image-product-1.jpg";
-import image2 from "../images/image-product-2.jpg";
-import image3 from "../images/image-product-3.jpg";
-import image4 from "../images/image-product-4.jpg";
-import thumbImage1 from "../images/image-product-1-thumbnail.jpg";
-import thumbImage2 from "../images/image-product-2-thumbnail.jpg";
-import thumbImage3 from "../images/image-product-3-thumbnail.jpg";
-import thumbImage4 from "../images/image-product-4-thumbnail.jpg";
-import iconNext from "../images/icon-next.svg";
-import iconNextOrange from "../images/icon-next-orange.svg";
-import iconPrev from "../images/icon-previous.svg";
-import iconPrevOrange from "../images/icon-previous-orange.svg";
+import React, { useState, useContext } from "react";
+import "../../../style/ProductImage.css";
+import image1 from "../../../images/image-product-1.jpg";
+import image2 from "../../../images/image-product-2.jpg";
+import image3 from "../../../images/image-product-3.jpg";
+import image4 from "../../../images/image-product-4.jpg";
+import thumbImage1 from "../../../images/image-product-1-thumbnail.jpg";
+import thumbImage2 from "../../../images/image-product-2-thumbnail.jpg";
+import thumbImage3 from "../../../images/image-product-3-thumbnail.jpg";
+import thumbImage4 from "../../../images/image-product-4-thumbnail.jpg";
+import iconNext from "../../../images/icon-next.svg";
+import iconNextOrange from "../../../images/icon-next-orange.svg";
+import iconPrev from "../../../images/icon-previous.svg";
+import iconPrevOrange from "../../../images/icon-previous-orange.svg";
+import { CartContext } from "../../../context/CartContext";
+import { ProductContext } from "../Context";
 
-const ImageOverlay = ({
-  ImageOverlay,
-  setImageOverlay,
-  overlayColor,
-  setOverlayColor,
-}) => {
+const ImageOverlay = () => {
+  const { setImageOverlay } = useContext(ProductContext);
+
+  const { overlayColor, setOverlayColor } = useContext(CartContext);
   const [overlayImage, setOverlayImage] = useState(0);
   const imageArr = [image1, image2, image3, image4];
   const thumbImageArr = [thumbImage1, thumbImage2, thumbImage3, thumbImage4];

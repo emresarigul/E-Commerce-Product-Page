@@ -5,12 +5,7 @@ import mobileMenu from "../images/icon-menu.svg";
 import Navigation from "./Navigation";
 import CartUser from "./CartUser";
 
-const Header = ({
-  cartAmount,
-  setCartAmount,
-  mobileNavOverlay,
-  setMobileNavOverlay,
-}) => {
+const Header = ({ mobileNavOverlay, setMobileNavOverlay }) => {
   const [mobileNavOpener, setMobileNavOpener] = useState(false);
 
   const mobileNavHandler = () => {
@@ -37,7 +32,7 @@ const Header = ({
           />
         </div>
         <div className="header-right">
-          <CartUser cartAmount={cartAmount} setCartAmount={setCartAmount} />
+          <CartUser />
         </div>
       </div>
     </div>
